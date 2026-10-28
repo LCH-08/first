@@ -1,19 +1,30 @@
-#include<stdio.h>
-// TODO: 实现 my_strlen，循环到 '\0'，返回长度
+#include <stdio.h>
+
 int my_strlen(const char *s) {
-    int i=0;
-    while (s[i]!='\0')
-    {
+    int i = 0;
+    while (s[i] != '\0') {
         i++;
     }
     return i;
 }
- int main()
- {
-    printf("%d\n",my_strlen("hello"));
-    printf("%d\n",my_strlen("abc"));
-    printf("%d\n",my_strlen(""));
+
+void my_strcpy(char *dst, const char *src) {
+    int i = 0;
+    while (src[i] != '\0') {
+        dst[i] = src[i];
+        i++;
+    }
+    dst[i] = '\0';
+}
+
+int main(void) {
+    char buf[20];
+
+    my_strcpy(buf, "hello");
+    printf("%s\n", buf);
+
+    my_strcpy(buf, "abc");
+    printf("%s\n", buf);
+
     return 0;
- }
- 
- 
+}
